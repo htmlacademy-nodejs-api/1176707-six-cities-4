@@ -1,14 +1,14 @@
-import { Images } from './rent-images.type.js'
+import { Images } from "./rent-images.type";
 
 export type Rent = {
-    name: string;
+    title: string;
     description: string;
     postDate: Date;
     city: string;
     mainImage: string;
-    images: Images;
-    premium: boolean;
-    favorite: boolean;
+    images: Images[];
+    premium: string;
+    favorite: string;
     rate: number;
     type: string;
     roomsNumber: number;
