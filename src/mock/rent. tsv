@@ -1,17 +1,2 @@
-Наименование. Обязательное. Мин. длин 10 символов, макс. длина 100;
-Описание предложения. Обязательное. Мин. длина 20 символов, макс. длина 1024 символа;
-Дата публикации предложения. Обязательное.
-Город. Обязательное. Один из шести городов.
-Превью изображения. Обязательное. Ссылка на изображение, которое используется в качестве превью;
-Фотографии жилья. Обязательное. Список ссылок на фотографии жилья. Всегда 6 фотографий;
-Флаг «Премиум». Обязательное. Признак премиальности предложения;
-Флаг «Избранное». Обязательное. Признак того, что предложение принадлежит списку избранных предложений пользователя;
-Рейтинг. Обязательное. Число от 1 до 5. Допускаются числа с запятой (1 знак после запятой);
-Тип жилья. Обязательное. Один из вариантов: apartment, house, room, hotel;
-Количество комнат. Обязательное. Мин. 1, Макс. 8;
-Количество гостей. Обязательное. Мин. 1, Макс. 10;
-Стоимость аренды. Обязательное. Мин. 100, Макс. 100 000;
-Удобства. Обязательное. Список удобств. Один или несколько вариантов из списка: Breakfast, Air conditioning, Laptop friendly workspace, Baby seat, Washer, Towels, Fridge;
-Автор предложения. Обязательное. Ссылка на сущность «Пользователь»;
-Количество комментариев. Рассчитывается автоматически;
-Координаты предложения для аренды. Обязательное. Координаты представлены широтой и долготой.
+Hamburg Hostel	Lorem ipsum dolor sit amet consectetur adipiscing elit Pellentesque facilisis purus nec varius gravida Morbi ipsum ligula hendrerit ut ipsum et venenatis hendrerit justo. Fusce finibus magna dolor et congue!	2022-04-06T08:45:40.283Z	Hamburg	Hamburg.jpg	img1.jpg;img2.jpg;img3.jpg;img4.jpg;img5.jpg;img6.jpg;	Non-Premium	Favorite	4.72	hotel	3	32500	Breakfast;Laptop friendly	user1.html	0	latitude: 53.550341;longitude: 10.000654
+Paris House	Lorem ipsum dolor sit amet consectetur adipiscing elit Pellentesque facilisis purus nec varius gravida Morbi ipsum ligula hendrerit ut ipsum et venenatis hendrerit justo Fusce finibus magna dolor et congue!	2022-04-05T08:45:40.284Z	Paris	Paris.jpg	img1.jpg;img2.jpg;img3.jpg;img4.jpg;img5.jpg;img6.jpg;	Premium	Non-Favorite	4.98	house	8	98300	Breakfast;Towels;Washer	user1.html	0	latitude: 48.85661;longitude: 2.351499

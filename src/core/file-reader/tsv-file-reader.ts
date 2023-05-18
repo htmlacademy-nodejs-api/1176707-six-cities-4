@@ -34,12 +34,14 @@ export default class TSVFileReader implements FileReaderInterface {
         rate: Number.parseInt(rate, 5),
         type,
         roomsNumber: Number.parseInt(roomsNumber, 8),
-        guestNumber: Number.parseInt(guestNumber, 10),
+        guestNumber,
         price: Number.parseInt(price, 10),
-        conveniences,
+        conveniences: conveniences.split(';')
+          .map((convenience: string) => ({convenience})),
         author,
         commentCount: Number.parseInt(commentCount, 10),
-        cords: Number.parseInt(cords, 10),
+        cords: cords.split(';')
+          .map((cord: string) => ({cord})),
       }));
   }
 }
