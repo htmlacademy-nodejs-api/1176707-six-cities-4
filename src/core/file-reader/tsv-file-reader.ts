@@ -28,18 +28,18 @@ export default class TSVFileReader implements FileReaderInterface {
         city,
         mainImage,
         images: images.split(';')
-        .map((image: string) => ({image})),
+          .map((image: string) => ({image})),
         premium,
         favorite,
         rate: Number.parseInt(rate, 5),
         type,
         roomsNumber: Number.parseInt(roomsNumber, 8),
         guestNumber: Number.parseInt(guestNumber, 10),
-        price: Number.parseInt(price, 100000),
+        price: Number.parseInt(price, 10),
         conveniences,
         author,
-        commentCount: Number.parseInt(commentCount),
-        cords: Number.parseInt(cords),
+        commentCount: Number.parseInt(commentCount, 10),
+        cords: Number.parseInt(cords, 10),
       }));
   }
 }

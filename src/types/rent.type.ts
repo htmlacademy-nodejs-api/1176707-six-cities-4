@@ -1,4 +1,4 @@
-import { Images } from "./rent-images.type";
+import { Images } from './rent-images.type';
 
 export type Rent = {
     title: string;
