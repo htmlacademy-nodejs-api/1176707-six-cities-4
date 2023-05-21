@@ -1,5 +1,4 @@
 import { Conveniences } from './rent-conveniences.js';
-import { Cords } from './rent-cords.js';
 import { Images } from './rent-images.type';
 
 export type Rent = {
@@ -11,13 +10,13 @@ export type Rent = {
     images: Images[];
     premium: string;
     favorite: string;
-    rate: number;
+    rate: string;
     type: string;
-    roomsNumber: number;
+    roomsNumber: string;
     guestNumber: string;
     price: number;
     conveniences: Conveniences[];
     author: string;
-    commentCount: number;
-    cords: Cords[];
+    commentCount: string;
+    cords: string;
 }
