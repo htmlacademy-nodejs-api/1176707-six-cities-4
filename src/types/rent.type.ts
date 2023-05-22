@@ -11,7 +11,7 @@ export type Rent = {
 	postDate: Date;
 	city: string;
 	mainImage: string;
-	images: Images[];
+	images: Images;
 	premium: PremiumType;
 	favorite: FavoriteType;
 	rate: number;
@@ -19,7 +19,7 @@ export type Rent = {
 	roomsNumber: number;
 	guestNumber: number;
 	price: number;
-	conveniences: Conveniences[];
+	conveniences: Conveniences;
 	commentCount: string;
 	cords: CordsType;
 	user: UserType;
