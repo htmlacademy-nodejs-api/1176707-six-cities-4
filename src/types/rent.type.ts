@@ -1,5 +1,7 @@
 import { Conveniences } from './rent-conveniences.js';
+import { CordsType } from './rent-cords.type.js';
 import { Images } from './rent-images.type';
+import { UserType } from './rent-user.type.js';
 
 export type Rent = {
     title: string;
@@ -8,15 +10,15 @@ export type Rent = {
     city: string;
     mainImage: string;
     images: Images[];
-    premium: string;
-    favorite: string;
-    rate: string;
+    premium: boolean;
+    favorite: boolean;
+    rate: number;
     type: string;
-    roomsNumber: string;
-    guestNumber: string;
+    roomsNumber: number;
+    guestNumber: number;
     price: number;
     conveniences: Conveniences[];
-    author: string;
     commentCount: string;
-    cords: string;
+    cords: CordsType;
+    user: UserType;
 }

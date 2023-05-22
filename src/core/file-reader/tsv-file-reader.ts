@@ -21,26 +21,28 @@ export default class TSVFileReader implements FileReaderInterface {
       .split('\n')
       .filter((row) => row.trim() !== '')
       .map((line) => line.split('\t'))
-      .map(([title, description, postDate, city, mainImage, images, premium, favorite, rate, type, roomsNumber, guestNumber, price, conveniences, author, commentCount, cords]) => ({
+      .map(([title, description, postDate, city, mainImage, images, premium, favorite, rate, type, roomsNumber, guestNumber, price, conveniences, commentCount, latitude, longitude, email, name, password, avatar]) => ({
         title,
         description,
         postDate: new Date(postDate),
         city,
         mainImage,
         images: images.split(';')
-          .map((image: string) => ({image})),
+          .map((image) => ({image})),
         premium,
         favorite,
-        rate,
+        rate: Number.parseInt(rate, 10),
         type,
-        roomsNumber,
-        guestNumber,
+        roomsNumber: Number.parseInt(roomsNumber, 10),
+        guestNumber: Number.parseInt(guestNumber, 10),
         price: Number.parseInt(price, 10),
         conveniences: conveniences.split(';')
-          .map((convenience: string) => ({convenience})),
-        author,
+          .map((convenience) => ({convenience})),
         commentCount,
-        cords,
+        cords: {latitude, longitude},
+        user: {email, name, password, avatar},
       }));
   }
 }
+
+
