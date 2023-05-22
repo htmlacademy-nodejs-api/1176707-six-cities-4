@@ -1,9 +1,5 @@
-import { FavoriteType } from './rent-favotire.type.js';
-import { Conveniences } from './rent-conveniences.js';
 import { CordsType } from './rent-cords.type.js';
-import { Images } from './rent-images.type.js';
 import { UserType } from './rent-user.type.js';
-import { PremiumType } from './rent-premium.type.js';
 
 export type Rent = {
 	title: string;
@@ -11,15 +7,15 @@ export type Rent = {
 	postDate: Date;
 	city: string;
 	mainImage: string;
-	images: Images;
-	premium: PremiumType;
-	favorite: FavoriteType;
+	images: string[];
+	premium: boolean;
+	favorite: boolean;
 	rate: number;
 	type: string;
 	roomsNumber: number;
 	guestNumber: number;
 	price: number;
-	conveniences: Conveniences;
+	conveniences: string[];
 	commentCount: string;
 	cords: CordsType;
 	user: UserType;
