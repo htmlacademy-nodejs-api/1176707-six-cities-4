@@ -1,4 +1,6 @@
 import { readFileSync } from 'node:fs';
+import { FavoriteType } from '../../types/rent-favotire.type.js';
+import { PremiumType } from '../../types/rent-premium.type.js';
 import { Rent } from '../../types/rent.type.js';
 import { FileReaderInterface } from './file-reader.interface.js';
 
@@ -29,8 +31,8 @@ export default class TSVFileReader implements FileReaderInterface {
         mainImage,
         images: images.split(';')
           .map((image) => ({image})),
-        premium,
-        favorite,
+        premium: PremiumType[premium as 'true' | 'false'],
+        favorite: FavoriteType[favorite as 'true' | 'false'],
         rate: Number.parseInt(rate, 10),
         type,
         roomsNumber: Number.parseInt(roomsNumber, 10),
