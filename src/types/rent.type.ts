@@ -1,6 +1,6 @@
 import { Conveniences } from './rent-conveniences.js';
 import { CordsType } from './rent-cords.type.js';
-import { Images } from './rent-images.type';
+import { Images } from './rent-images.type.js';
 import { UserType } from './rent-user.type.js';
 
 export type Rent = {
