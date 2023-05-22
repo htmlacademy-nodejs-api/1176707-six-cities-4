@@ -35,7 +35,7 @@ export default class TSVFileReader implements FileReaderInterface {
         type,
         roomsNumber,
         guestNumber,
-        price: Number.parseInt(price, 8),
+        price: Number.parseInt(price, 10),
         conveniences: conveniences.split(';')
           .map((convenience: string) => ({convenience})),
         author,
