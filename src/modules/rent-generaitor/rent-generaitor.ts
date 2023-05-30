@@ -1,8 +1,26 @@
 import dayjs from 'dayjs';
-import { FIRST_WEEK_DAY, LAST_WEEK_DAY, FALSE, TRUE, MIN_RATE, MAX_RATE, MIN_ROOMS, MAX_ROOMS, MIN_GUEST, MAX_GUEST, MIN_CONVENIENCES, MAX_CONVENIENCES, MIN_PRICE, MAX_PRICE, MIN_COMMENT, MAX_COMMENT } from '../../core/helpers/const.js';
 import { getRandomItems, getRandomItem, generateRandomValue } from '../../core/helpers/random.js';
 import { MockData } from '../../types/mock-data.type.js';
 import { OfferGeneratorInterface } from './rent-generaitor.interface.js';
+
+const MIN_PRICE = 500;
+const MAX_PRICE = 20000;
+const TRUE = 1;
+const FALSE = 0;
+const ROOM_IMAGES = 6;
+
+const MIN_RATE = 0;
+const MAX_RATE = 5;
+const MIN_CONVENIENCES = 1;
+const MAX_CONVENIENCES = 7;
+const FIRST_WEEK_DAY = 1;
+const LAST_WEEK_DAY = 7;
+const MIN_ROOMS = 1;
+const MAX_ROOMS = 8;
+const MIN_GUEST = 1;
+const MAX_GUEST = 10;
+const MIN_COMMENT = 0;
+const MAX_COMMENT = 1000;
 
 export default class OfferGenerator implements OfferGeneratorInterface {
   constructor(private readonly mockData: MockData) {}
@@ -13,7 +31,7 @@ export default class OfferGenerator implements OfferGeneratorInterface {
     const postDate = dayjs().subtract(generateRandomValue(FIRST_WEEK_DAY, LAST_WEEK_DAY), 'day').toISOString();
     const city = getRandomItem<string>(this.mockData.citys);
     const mainImage = getRandomItem<string>(this.mockData.mainImages);
-    const images = getRandomItems<string>(this.mockData.images, 6);
+    const images = getRandomItems<string>(this.mockData.images, ROOM_IMAGES);
     const premium = Boolean(generateRandomValue(FALSE, TRUE));
     const favorite = Boolean(generateRandomValue(FALSE, TRUE));
     const rate = generateRandomValue(MIN_RATE, MAX_RATE);
