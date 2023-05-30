@@ -5,8 +5,6 @@ import { OfferGeneratorInterface } from './rent-generaitor.interface.js';
 
 const MIN_PRICE = 500;
 const MAX_PRICE = 20000;
-const TRUE = 1;
-const FALSE = 0;
 const ROOM_IMAGES = 6;
 
 const MIN_RATE = 0;
@@ -32,8 +30,8 @@ export default class OfferGenerator implements OfferGeneratorInterface {
     const city = getRandomItem<string>(this.mockData.citys);
     const mainImage = getRandomItem<string>(this.mockData.mainImages);
     const images = getRandomItems<string>(this.mockData.images, ROOM_IMAGES);
-    const premium = Boolean(generateRandomValue(FALSE, TRUE));
-    const favorite = Boolean(generateRandomValue(FALSE, TRUE));
+    const premium = Boolean(generateRandomValue(0, 1));
+    const favorite = Boolean(generateRandomValue(0, 1));
     const rate = generateRandomValue(MIN_RATE, MAX_RATE);
     const type = getRandomItem<string>(this.mockData.types);
     const rooms = generateRandomValue(MIN_ROOMS, MAX_ROOMS);
