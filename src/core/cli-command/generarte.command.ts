@@ -1,8 +1,8 @@
 import { got } from 'got';
 import { CliCommandInterface } from './cli-command.interface.js';
 import { MockData } from '../../types/mock-data.type.js';
-import { appendFile } from 'node:fs/promises';
-import OfferGenerator from '../../modules/rent-generaitor/ren-generaitor.js';
+import { writeFile } from 'node:fs/promises';
+import OfferGenerator from '../../modules/rent-generaitor/rent-generaitor.js';
 
 export default class GenerateCommand implements CliCommandInterface {
   public readonly name = '--generate';
@@ -22,7 +22,7 @@ export default class GenerateCommand implements CliCommandInterface {
     const offerGeneratorString = new OfferGenerator(this.initialData);
 
     for (let i = 0; i < offerCount; i++) {
-      await appendFile(filepath, `${offerGeneratorString.generate()}\n`, 'utf8');
+      await writeFile(filepath, `${offerGeneratorString.generate()}\n`, 'utf8');
     }
 
     console.log(`File ${filepath} was created!`);
