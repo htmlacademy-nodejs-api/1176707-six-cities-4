@@ -1,46 +1,37 @@
-import { readFileSync } from 'node:fs';
-import { Rent } from '../../types/rent.type.js';
+import EventEmitter from 'node:events';
+import { createReadStream } from 'node:fs';
 import { FileReaderInterface } from './file-reader.interface.js';
 
+const CHUNK_SIZE = 16384;
 
-export default class TSVFileReader implements FileReaderInterface {
-  private rawData = '';
-
-  constructor(public filename: string) { }
-
-  public read(): void {
-    this.rawData = readFileSync(this.filename, { encoding: 'utf8' });
+export default class TSVFileReader extends EventEmitter implements FileReaderInterface {
+  constructor(public filename: string) {
+    super();
   }
 
-  public toArray(): Rent[] {
-    if (!this.rawData) {
-      return [];
+  public async read(): Promise<void> {
+    const stream = createReadStream(this.filename, {
+      highWaterMark: CHUNK_SIZE,
+      encoding: 'utf-8',
+    });
+
+    let remainingData = '';
+    let nextLinePosition = -1;
+    let importedRowCount = 0;
+
+    for await (const chunk of stream) {
+      remainingData += chunk.toString();
+
+      while ((nextLinePosition = remainingData.indexOf('\n')) >= 0) {
+        const completeRow = remainingData.slice(0, nextLinePosition + 1);
+        remainingData = remainingData.slice(++nextLinePosition);
+        importedRowCount++;
+
+        this.emit('line', completeRow);
+      }
     }
 
-    return this.rawData
-      .split('\n')
-      .filter((row) => row.trim() !== '')
-      .map((line) => line.split('\t'))
-      .map(([title, description, postDate, city, mainImage, images, premium, favorite, rate, type, roomsNumber, guestNumber, price, conveniences, commentCount, latitude, longitude, email, name, password, avatar]) => ({
-        title,
-        description,
-        postDate: new Date(postDate),
-        city,
-        mainImage,
-        images: images.split(';'),
-        premium: premium.toLowerCase() === 'true',
-        favorite: favorite.toLowerCase() === 'true',
-        rate: Number.parseInt(rate, 10),
-        type,
-        roomsNumber: Number.parseInt(roomsNumber, 10),
-        guestNumber: Number.parseInt(guestNumber, 10),
-        price: Number.parseInt(price, 10),
-        conveniences: conveniences.split(';'),
-        commentCount,
-        cords: {latitude, longitude},
-        user: {email, name, password, avatar},
-      }));
+    this.emit('end', importedRowCount);
   }
 }
-
 

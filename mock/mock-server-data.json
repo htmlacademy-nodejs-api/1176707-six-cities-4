@@ -1,0 +1,136 @@
+{
+	"api": {
+		"titles": [
+			"Parister",
+			"Cologneter",
+			"Brusselster",
+			"Amsterdamter",
+			"Hamburger",
+			"Dusseldorfer"
+		],
+		"descriptions": [
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+			"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			"Lobortis elementum nibh tellus molestie nunc non."
+		],
+		"postDates": [
+			"2022-04-31T08:45:40.283Z",
+			"2022-07-26T08:45:40.283Z",
+			"2022-04-10T08:45:40.283Z",
+			"2022-05-24T08:45:40.283Z",
+			"2021-04-02T08:45:40.283Z",
+			"2023-04-06T08:45:40.283Z"
+		],
+		"citys": [
+			"Paris",
+			"Cologne",
+			"Brussels",
+			"Amsterdam",
+			"Hamburg",
+			"Dusseldorf"
+		],
+		"mainImages": [
+			"main-paris.jpg",
+			"main-cologne.jpg",
+			"main-brussels.jpg",
+			"main-amsterdam.jpg",
+			"main-hamburg.jpg",
+			"main-dusseldorf.jpg"
+		],
+		"images": [
+			"paris-images/paris-img-1",
+			"paris-images/paris-img-2",
+			"paris-images/paris-img-3",
+			"paris-images/paris-img-4",
+			"paris-images/paris-img-5",
+			"paris-images/paris-img-6",
+			"cologne-images/cologne-img-1",
+			"cologne-images/cologne-img-2",
+			"cologne-images/cologne-img-3",
+			"cologne-images/cologne-img-4",
+			"cologne-images/cologne-img-5",
+			"cologne-images/cologne-img-6",
+			"brussels-images/brussels-img-1",
+			"brussels-images/brussels-img-2",
+			"brussels-images/brussels-img-3",
+			"brussels-images/brussels-img-4",
+			"brussels-images/brussels-img-5",
+			"brussels-images/brussels-img-6",
+			"amsterdam-images/amsterdam-img-1",
+			"amsterdam-images/amsterdam-img-2",
+			"amsterdam-images/amsterdam-img-3",
+			"amsterdam-images/amsterdam-img-4",
+			"amsterdam-images/amsterdam-img-5",
+			"amsterdam-images/amsterdam-img-6",
+			"hamburg-images/hamburg-img-1",
+			"hamburg-images/hamburg-img-2",
+			"hamburg-images/hamburg-img-3",
+			"hamburg-images/hamburg-img-4",
+			"hamburg-images/hamburg-img-5",
+			"hamburg-images/hamburg-img-6",
+			"dusseldorf-images/dusseldorf-img-1",
+			"dusseldorf-images/dusseldorf-img-2",
+			"dusseldorf-images/dusseldorf-img-3",
+			"dusseldorf-images/dusseldorf-img-4",
+			"dusseldorf-images/dusseldorf-img-5",
+			"dusseldorf-images/dusseldorf-img-6"
+		],
+		"types": [
+			"apartment",
+			"house",
+			"room",
+			"hotel"
+		],
+		"conveniences": [
+			"Breakfast",
+			"Air conditioning",
+			"Laptop friendly workspace",
+			"Baby seat",
+			"Washer",
+			"Towels",
+			"Fridge"
+		],
+		"cords": [
+			"48.85661 2.351499",
+			"50.938361 6.959974",
+			"50.846557 4.351697",
+			"52.370216 4.895168",
+			"53.550341 10.000654",
+			"51.225402 6.776314"
+		],
+		"users": [
+			"Иван Иванов",
+			"Олег Сидоров",
+			"Пьер Безухов",
+			"Роланд Дискейн",
+			"Холи Гибни",
+			"Джек Торренс",
+			"Антон Городецкий",
+			"Борис Гесер",
+			"Рокки Бальбоа",
+			"Джон Смит"
+		  ],
+		  "emails": [
+			"snow@pisem.local",
+			"president@dka.local",
+			"fish@big.local",
+			"test@pisem.local",
+			"freedom@pisem.local",
+			"rolan@pochta.local",
+			"author@mir.local",
+			"test@lost.loca",
+			"kujo-fan@story.local"
+		  ],
+		  "avatars": [
+			"user.jpg",
+			"photo.jpg",
+			"awesome-avatar.jpg",
+			"roland.jpg",
+			"smite.jpg",
+			"coffee.jpg"
+		  ]
+	}
+}
