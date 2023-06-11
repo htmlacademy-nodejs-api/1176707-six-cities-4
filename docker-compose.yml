@@ -1,9 +1,9 @@
-version: '3.5'
+version: '3.9'
 services:
   mongodb:
-    image: mongo
+    image: mongo:4.2
     restart: always
-    container_name: mongodb
+    container_name: ernest-six-mongodb
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: test
@@ -13,9 +13,9 @@ services:
       - ./mongodb:/data/db
 
   mongodb-express:
-    image: mongo-express
+    image: mongo-express:latest
     restart: always
-    container_name: mongo-express
+    container_name: ernest-six-mongo-express
     ports:
       - 8081:8081
     environment:

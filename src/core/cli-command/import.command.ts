@@ -1,20 +1,20 @@
 import { CliCommandInterface } from './cli-command.interface.js';
 import TSVFileReader from '../file-reader/tsv-file-reader.js';
 import { createOffer, getErrorMessage, getMongoURI } from '../helpers/index.js';
-import { CategoryServiceInterface } from '../../modules/category/category-service.interface.js';
+import { ConvenienceServiceInterface } from '../../modules/category/convenience-service.interface.js';
 import { OfferServiceInterface } from '../../modules/offer/offer-service.interface.js';
 import { LoggerInterface } from '../logger/logger.interface.js';
 import ConsoleLoggerService from '../logger/console.service.js';
 import OfferService from '../../modules/offer/offer.service.js';
-import CategoryService from '../../modules/category/category.service.js';
 import MongoClientService from '../database-client/mongo-client.service.js';
-import { CategoryModel } from '../../modules/category/category.entity.js';
 import { OfferModel } from '../../modules/offer/offer.entity.js';
 import { DatabaseClientInterface } from '../database-client/database-client.interface.js';
 import { UserModel } from '../../modules/rent-generaitor/user/user.entity.js';
 import { UserServiceInterface } from '../../modules/rent-generaitor/user/user-service.interface.js';
 import UserService from '../../modules/rent-generaitor/user/user.service.js';
 import { Rent } from '../../types/rent.type.js';
+import { ConveniencesModel } from '../../modules/category/convenience.entity.js';
+import ConvenienceService from '../../modules/category/convenience.service.js';
 
 const DEFAULT_DB_PORT = '27017';
 const DEFAULT_USER_PASSWORD = 'test';
@@ -22,7 +22,7 @@ const DEFAULT_USER_PASSWORD = 'test';
 export default class ImportCommand implements CliCommandInterface {
   public readonly name = '--import';
   private userService!: UserServiceInterface;
-  private categoryService!: CategoryServiceInterface;
+  private convenienceService!: ConvenienceServiceInterface;
   private offerService!: OfferServiceInterface;
   private databaseService!: DatabaseClientInterface;
   private logger: LoggerInterface;
@@ -34,27 +34,27 @@ export default class ImportCommand implements CliCommandInterface {
 
     this.logger = new ConsoleLoggerService();
     this.offerService = new OfferService(this.logger, OfferModel);
-    this.categoryService = new CategoryService(this.logger, CategoryModel);
+    this.convenienceService = new ConvenienceService(this.logger, ConveniencesModel);
     this.userService = new UserService(this.logger, UserModel);
     this.databaseService = new MongoClientService(this.logger);
   }
 
   private async saveOffer(offer: Rent) {
-    const categories = [];
+    const conveniences = [];
     const user = await this.userService.findOrCreate({
       ...offer.user,
       password: DEFAULT_USER_PASSWORD
     }, this.salt);
 
-    for (const {name} of offer.categories) {
-      const existCategory = await this.categoryService.findByCategoryNameOrCreate(name, {name});
-      categories.push(existCategory.id);
+    for (const {convenience} of offer.conveniences) {
+      const existConveniences = await this.convenienceService.findByConveniencesNameOrCreate(convenience, {convenience});
+      conveniences.push(existConveniences.id);
     }
 
     await this.offerService.create({
       ...offer,
-      categories,
-      userId: user.id,
+      conveniences,
+      user: user.id,
     });
   }
 

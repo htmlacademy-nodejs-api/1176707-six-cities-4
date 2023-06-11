@@ -1,3 +1,4 @@
+import { Conveniences } from '../../../../types/rent-conveniences.js';
 import { CordsType } from '../../../../types/rent-cords.type.js';
 import { UserType } from '../../../../types/rent-user.type.js';
 
@@ -15,8 +16,9 @@ export default class CreateOfferDto {
   public roomsNumber!: number;
   public guestNumber!: number;
   public price!: number;
-  public conveniences!: string[];
+  public conveniences!: Conveniences[];
   public commentCount!: string;
   public cords!: CordsType;
   public user!: UserType;
 }
+
