@@ -1,3 +1,4 @@
+import { Conveniences } from './rent-conveniences.js';
 import { CordsType } from './rent-cords.type.js';
 import { UserType } from './rent-user.type.js';
 
@@ -15,7 +16,7 @@ export type Rent = {
 	roomsNumber: number;
 	guestNumber: number;
 	price: number;
-	conveniences: string[];
+	conveniences: Conveniences[];
 	commentCount: string;
 	cords: CordsType;
 	user: UserType;
