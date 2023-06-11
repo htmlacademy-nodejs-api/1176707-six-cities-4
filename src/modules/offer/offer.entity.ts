@@ -51,7 +51,7 @@ export class OfferEntity extends defaultClasses.TimeStamps {
   @prop()
   public guestNumber!: number;
 
-  @prop({trim: true})
+  @prop()
   public price!: number;
 
   @prop({
