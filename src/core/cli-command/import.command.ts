@@ -1,7 +1,7 @@
 import { CliCommandInterface } from './cli-command.interface.js';
 import TSVFileReader from '../file-reader/tsv-file-reader.js';
 import { createOffer, getErrorMessage, getMongoURI } from '../helpers/index.js';
-import { ConvenienceServiceInterface } from '../../modules/category/convenience-service.interface.js';
+import { ConvenienceServiceInterface } from '../../modules/convenience/convenience-service.interface.js';
 import { OfferServiceInterface } from '../../modules/offer/offer-service.interface.js';
 import { LoggerInterface } from '../logger/logger.interface.js';
 import ConsoleLoggerService from '../logger/console.service.js';
@@ -9,12 +9,12 @@ import OfferService from '../../modules/offer/offer.service.js';
 import MongoClientService from '../database-client/mongo-client.service.js';
 import { OfferModel } from '../../modules/offer/offer.entity.js';
 import { DatabaseClientInterface } from '../database-client/database-client.interface.js';
-import { UserModel } from '../../modules/rent-generaitor/user/user.entity.js';
-import { UserServiceInterface } from '../../modules/rent-generaitor/user/user-service.interface.js';
-import UserService from '../../modules/rent-generaitor/user/user.service.js';
+import { UserModel } from '../../modules/user/user.entity.js';
+import { UserServiceInterface } from '../../modules/user/user-service.interface.js';
+import UserService from '../../modules/user/user.service.js';
 import { Rent } from '../../types/rent.type.js';
-import { ConveniencesModel } from '../../modules/category/convenience.entity.js';
-import ConvenienceService from '../../modules/category/convenience.service.js';
+import { ConveniencesModel } from '../../modules/convenience/convenience.entity.js';
+import ConvenienceService from '../../modules/convenience/convenience.service.js';
 
 const DEFAULT_DB_PORT = '27017';
 const DEFAULT_USER_PASSWORD = 'test';
