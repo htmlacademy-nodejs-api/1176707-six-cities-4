@@ -47,10 +47,11 @@ export function createOffer(offerData: string): Rent {
     roomsNumber: Number.parseInt(roomsNumber, 10),
     guestNumber: Number.parseInt(guestNumber, 10),
     price: Number.parseInt(price, 10),
-    conveniences: conveniences.split(';'),
+    conveniences: conveniences.split(';')
+      .map((convenience) => ({ convenience })),
     commentCount,
-    cords: {latitude, longitude},
+    cords: { latitude, longitude },
     user,
-  } as Rent;
+  } as unknown as Rent;
 }
 

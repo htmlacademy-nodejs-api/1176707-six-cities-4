@@ -1,3 +1,5 @@
+import { Conveniences } from './rent-conveniences.js';
+
 export type MockData = {
     titles: string[];
     descriptions: string[];
@@ -6,7 +8,7 @@ export type MockData = {
     mainImages: string[];
     images: string[];
     types: string[];
-    conveniences: string[];
+    conveniences: Conveniences[];
     users: string[];
     emails: string[];
     avatars: string[];
